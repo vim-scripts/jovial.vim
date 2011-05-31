@@ -1,0 +1,14 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3592
+
+Supported file suffixes: *.j73, *.jov, *.jovial
+
+This archive contains Vim syntax highlighting for the JOVIAL programming language.
+
+It's designed for the J73 dialect (MIL-STD-1589C), but works with other versions. A simple piece of JOVIAL code can be found in the file sample.j73. After installation, you should be able to open that file with Vim and get color syntax highlighting.
+
+For more information about JOVIAL, please see:
+http://en.wikipedia.org/wiki/JOVIAL
+
+I have uploaded a copy of MIL-STD-1589C to:
+http://www.scribd.com/doc/44512382/JOVIAL-J73-Computer-Programming-Language-1984-MIL-STD-1589C
+

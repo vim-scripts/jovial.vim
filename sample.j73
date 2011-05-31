@@ -1,0 +1,20 @@
+% Sample adapted from "Computer Programming Manual for the JOVIAL (J73) Language", US Air Force, 1981 %
+START
+    !COMPOOL 'data';
+    DEF PROC FIND(code,tab);
+        BEGIN
+        ITEM code U;
+        TABLE tab(*);
+            BEGIN
+            ITEM tab'code U;
+            ITEM tab'value F;
+            END
+        FIND = -99999.;
+        FOR i:0 BY 1 WHILE i < UBOUND(tab,0);
+            if code = tab'code(i);
+                BEGIN
+                FIND = tab'value(i);
+                EXIT;
+                END
+    END
+TERM

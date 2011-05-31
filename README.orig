@@ -1,0 +1,43 @@
+Language:	JOVIAL (J73)
+Version:	1.1
+Maintainer:	Paul McGinnis <paulmcg@aol.com>
+Last Change:	2011/05/30
+
+Supported file suffixes: *.j73, *.jov, *.jovial
+
+This archive contains Vim syntax highlighting for the JOVIAL programming language.
+
+It's designed for the J73 dialect (MIL-STD-1589C), but works with other
+versions. A simple piece of JOVIAL code can be found in the file sample.j73.
+After installation, you should be able to open that file with Vim and get
+color syntax highlighting.
+
+For more information about JOVIAL, please see:
+http://en.wikipedia.org/wiki/JOVIAL
+
+I have uploaded a copy of MIL-STD-1589C to:
+http://www.scribd.com/doc/44512382/JOVIAL-J73-Computer-Programming-Language-1984-MIL-STD-1589C
+
+I have also placed additional JOVIAL documents under my profile at:
+http://www.scribd.com/paulmcg0
+
+INSTALLATION
+============
+This archive contains two directories, ftdetect and syntax. Each directory has
+a file called jovial.vim. Copy both directories into ~/.vim, where ~ is your
+home directory.
+
+CHANGE HISTORY
+======
+version 1.1, May 30, 2011
+* Fixed code to allow ' characters in variable names. This'is'crazy is a legitimate JOVIAL variable name!
+* Added support for floating point data types.
+* Added support for binary "bead" data types.
+* Added standard TODO, FIXME, and XXX tags in comments, as in other syntaxes.
+* Changed code to allow for generic directives instead of specific values such as !COMPOOL.
+* Added optional rounding parameters R T and Z to integer and floating types.
+* Split machine specific parameters into constants and functions. For example, BITSINBYTE is a
+constant, but BYTEPOS() is a function.
+
+version 1.0, May 19, 2011
+* Initial release.
