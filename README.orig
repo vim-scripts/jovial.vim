@@ -1,7 +1,7 @@
 Language:	JOVIAL (J73)
-Version:	1.1
+Version:	1.2
 Maintainer:	Paul McGinnis <paulmcg@aol.com>
-Last Change:	2011/05/30
+Last Change:	2011/06/17
 
 Supported file suffixes: *.j73, *.jov, *.jovial
 
@@ -29,6 +29,10 @@ home directory.
 
 CHANGE HISTORY
 ======
+version 1.2, June 17, 2011
+* Changed use of HiLink to hi def link per request from Bram
+* Added keywords that are extensions to JOVIAL.
+
 version 1.1, May 30, 2011
 * Fixed code to allow ' characters in variable names. This'is'crazy is a legitimate JOVIAL variable name!
 * Added support for floating point data types.

@@ -1,15 +1,12 @@
 " Vim syntax file
 " Language: JOVIAL J73
-" Version: 1.1
+" Version: 1.2
 " Maintainer: Paul McGinnis <paulmcg@aol.com>
-" Last Change: 2011/05/30
+" Last Change: 2011/06/17
 " Remark: Based on MIL-STD-1589C for JOVIAL J73 language
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
+" Quit when a (custom) syntax file was already loaded
+if exists("b:current_syntax")
   finish
 endif
 
@@ -64,6 +61,10 @@ syn keyword jovialStatement GOTO IF INLINE INSTANCE LABEL LIKE OVERLAY POS
 syn keyword jovialStatement PROC PROGRAM REC REF RENT REP RETURN START STOP
 syn keyword jovialStatement TERM THEN WHILE
 
+" JOVIAL extensions, see section 8.2.2 in MIL-STD-1589C
+syn keyword jovialStatement CONDITION ENCAPSULATION EXPORTS FREE HANDLER IN INTERRUPT NEW
+syn keyword jovialStatement PROTECTED READONLY REGISTER SIGNAL TO UPDATE WITH WRITEONLY ZONE
+
 " implementation specific constants and functions, see section 1.4 in MIL-STD-1589C
 syn keyword jovialConstant BITSINBYTE BITSINWORD LOCSINWORD
 syn keyword jovialConstant BYTESINWORD BITSINPOINTER INTPRECISION
@@ -83,39 +84,27 @@ syn keyword jovialFunction BYTESIZE WORDSIZE LBOUND UBOUND NWDSEN FIRST
 syn keyword jovialFunction LAST NENT
 
 " Define the default highlighting.
-" For version 5.7 and earlier: only when not done already
-" For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_jovial_syn_inits")
-    if version < 508
-        let did_jovial_syn_inits = 1
-        command -nargs=+ JovialHiLink hi link <args>
-    else
-        command -nargs=+ JovialHiLink hi def link <args>
-    endif
-
-    JovialHiLink jovialBitConstant Number
-    JovialHiLink jovialBoolean Boolean
-    JovialHiLink jovialComment Comment
-    JovialHiLink jovialConstant Constant
-    JovialHiLink jovialFloat Float
-    JovialHiLink jovialFunction Function
+hi def link jovialBitConstant Number
+hi def link jovialBoolean Boolean
+hi def link jovialComment Comment
+hi def link jovialConstant Constant
+hi def link jovialFloat Float
+hi def link jovialFunction Function
 " No color highlighting for JOVIAL identifiers. See above,
 " this is to prevent confusion with JOVIAL strings
-"    JovialHiLink jovialIdentifier Identifier
-    JovialHiLink jovialNumber Number
-    JovialHiLink jovialOperator Operator
-    JovialHiLink jovialPreProc PreProc
-    JovialHiLink jovialStatement Statement
-    JovialHiLink jovialStorageClass StorageClass
-    JovialHiLink jovialString String
-    JovialHiLink jovialStructure Structure
-    JovialHiLink jovialTodo Todo
-    JovialHiLink jovialType Type
-    JovialHiLink jovialTypedef Typedef
+"hi def link jovialIdentifier Identifier
+hi def link jovialNumber Number
+hi def link jovialOperator Operator
+hi def link jovialPreProc PreProc
+hi def link jovialStatement Statement
+hi def link jovialStorageClass StorageClass
+hi def link jovialString String
+hi def link jovialStructure Structure
+hi def link jovialTodo Todo
+hi def link jovialType Type
+hi def link jovialTypedef Typedef
 
-    delcommand JovialHiLink
-endif
 
 let b:current_syntax = "jovial"
 
-" vim: ts=8 sw=4
+" vim: ts=8
